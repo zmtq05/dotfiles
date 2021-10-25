@@ -1,0 +1,59 @@
+# https://i3wm.org/docs/userguide.html
+
+### Variables
+set $mod Mod4
+set $alt Mod1
+
+set $left  h
+set $down  j
+set $up    k
+set $right l
+
+set $PRIMARY DP-2
+set $SECOND  HDMI-0
+
+set $ws1    "1"
+set $ws2    "2"
+set $ws3    "3"
+set $ws4    "4"
+set $ws5    "5"
+set $ws6    "6"
+set $ws7    "7"
+set $ws8    "8"
+set $ws9    "9"
+set $ws10   "10"
+
+### font
+font pango: Pretendard 10
+
+### border
+default_border          none
+default_floating_border none
+
+### focus
+focus_follows_mouse     no
+#focus_wrapping          workspace
+
+### bind workspaces
+workspace 1 output $PRIMARY
+workspace 3 output $PRIMARY
+workspace 5 output $PRIMARY
+
+workspace 2 output $SECOND
+workspace 4 output $SECOND
+workspace 6 output $SECOND
+
+### bind programs to workspace
+assign [class="discord"]    $ws9
+
+### startup
+# /etc/xdg/autostart, ~/.config/autostart .desktop files
+exec dex --autostart --environment i3
+
+bar {
+    status_command i3status
+    tray_output primary
+}
+
+include ~/.config/i3/shortcuts/*.conf
+include ~/.config/i3/modes/*.conf
