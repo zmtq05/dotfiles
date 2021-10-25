@@ -1,0 +1,11 @@
+---
+daemon:
+  modules:
+    - Xim
+log:
+  global_level: OFF
+engine:
+  hangul:
+    addons:
+      dubeolsik:
+        - TreatJongseongAsChoseong
