@@ -5,6 +5,9 @@ daemon:
 log:
   global_level: OFF
 engine:
+  xim_preedit_font:
+    - Sarasa Term K Nerd Font
+    - 12
   hangul:
     addons:
       dubeolsik:
